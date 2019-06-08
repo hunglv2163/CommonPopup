@@ -76,10 +76,20 @@
                 ready()
                 {
                     super.ready();
-                    if(this.hasAttribute("no-cancel-on-outside-click")){
-                        console.log("host set no-cancel-on-outside-click");
-                        this.$.formDialog.setAttribute("no-cancel-on-outside-click",true);
+                    //transfer attribute default to paper-dialog
+                    var arrAttributes=this.getAttributeNames();
+                    for (var j = 0; j < arrAttributes.length; j++){
+                        var element=arrAttributes[j];
+                        if(this.getAttribute(element)==undefined || this.getAttribute(element)==""){
+                            console.log("host transfer attribute "+element);
+                            this.$.formDialog.setAttribute("no-cancel-on-outside-click",this.getAttribute(element));
+                        }
                     }
+
+//                    if(this.hasAttribute("no-cancel-on-outside-click")){
+//                        console.log("host set no-cancel-on-outside-click");
+//                        this.$.formDialog.setAttribute("no-cancel-on-outside-click",this.getAttribute("header-text"));
+//                    }
                 }
                 open()
                 {
