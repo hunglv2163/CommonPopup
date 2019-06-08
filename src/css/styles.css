@@ -1,0 +1,157 @@
+#login-register-box {
+    max-width: 410px;
+    width: 100%;
+    /*margin: 85px auto;*/
+    margin: 55px auto;
+}
+
+#login-register-box h1 {
+    font-size: 32px;
+    color: #b5b5b5;
+    font-weight: 800;
+    text-align: center;
+}
+
+#login-register-box input[type='text'],
+#login-register-box input[type='password'],
+#login-register-box .ui.button {
+    border-radius: 15px;
+    padding: 13px 20px;
+    width: 100%;
+}
+
+#login-register-box .ui.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#login-register-box .social-login-box button {
+    font-weight: 800;
+    font-size: 13px;
+}
+
+#login-register-box button img {
+    height: 15px;
+    width: auto;
+    margin-left: 10px;
+}
+
+#login-register-box .social-login-box {
+    /*border: 1px solid #b5b5b5;*/
+    padding: 10px 20px;
+    margin-bottom: 40px;
+}
+
+#login-register-box .social-login-box .kakao {
+    background: #f9e000;
+    color: #000;
+    padding: 8px;
+}
+
+#login-register-box .social-login-box .kakao img {
+    height: 25px;
+}
+
+#login-register-box .social-login-box .google {
+    background: #dc4b3a;
+    color: #fff;
+}
+
+#login-register-box form label,
+#login-register-box form input[type='text'],
+#login-register-box form input[type='password'],
+#login-register-box form button {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.45;
+    color: #b5b5b5;
+}
+
+#login-register-box form label {
+    margin-bottom: 10px;
+}
+
+#login-register-box form label a {
+    color: #6d6d6d;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+#login-register-box form button {
+    background: #1e4985;
+    color: #fff;
+}
+
+#login-register-box .action {
+    text-align: center;
+    color: #6d6d6d;
+    font-weight: 800;
+}
+
+#login-register-box .action a {
+    color: #6d6d6d;
+    text-decoration: underline;
+}
+
+#login-register-box-message {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background: #ff5946;
+    height: 95px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+#login-register-box-message p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#language-selected {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    background: rgb(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 20px;
+}
+
+
+@media only screen and (max-width: 768px) {
+    #login-register-box {
+        padding: 20px;
+    }
+
+    #login-register-box-message p {
+        font-size: 14px;
+    }
+
+    #login-register-box h1 {
+        font-size: 24px;
+    }
+
+    #login-register-box form label {
+        font-size: 16px;
+    }
+    	
+    #login-register-box form input[type='text'],
+    #login-register-box form input[type='password'],
+    #login-register-box form button {
+    	padding: 10px 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}
+
+@media only screen and (max-width: 1400px) {}

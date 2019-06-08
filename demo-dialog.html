@@ -1,0 +1,132 @@
+<!-- Imports polymer -->
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<link rel="import" href="src/common_components/confirm-dialog.html">
+<link rel="import" href="src/common_components/notification-dialog.html">
+<link rel="import" href="src/common_components/dynamic-dialog.html">
+
+<!-- Defines element markup -->
+<dom-module id="demo-dialog">
+    <link rel="import" type="css" href="src/css/style.css">
+    <link rel="import" type="css" href="src/css/materialize.css">
+    <template>
+<style>
+    #slideOut {
+        top: 128px;
+        height: calc(100% + -128px) !important;
+    }
+
+</style>
+        <confirm-dialog id="demoCommonConfirm"
+                        on-ok-click="okClickAction"
+                        on-cancel-click="showMessageClickCancel"
+                        confirm-message="Do you want to delete this item?">
+        </confirm-dialog>
+
+        <notification-dialog id="demoCommonNotification"
+                             header-text="Notification"
+                             content-message="Success! You have done something">
+        </notification-dialog>
+
+
+
+
+        <dynamic-dialog id="demoFormDialog"
+                        header-text="Input dialog"
+                        on-ok-click="submitChangeForm">
+            <div class="ma-form">
+                <input id="sharePincode" name="pinCode" style="background: #ffffff;"
+                       class="validate" placeholder="Enter code" >
+            </div>
+        </dynamic-dialog>
+
+
+<div class="sidenav sidenav-fixed style-scope home-view">
+
+        <ul class="side-list listMenu"  style="margin-top: 50px">
+
+            <li on-tap="clickConfirmDemo" style="cursor: pointer">
+                <div style="margin: 0 auto;width: 87%;" class="hoverable">
+                    <i style="margin-left: 10px" ></i>
+                    <span>Demo confirm</span>
+                </div>
+            </li>
+            <li on-tap="clickNotificationDemo" style="cursor: pointer">
+                <div style="margin: 0 auto;width: 87%;" class="hoverable">
+                    <i style="margin-left: 10px" ></i>
+                    <span>Demo notificaton</span>
+                </div>
+            </li>
+            <li on-tap="clickDynamicDemo" style="cursor: pointer">
+                <div style="margin: 0 auto;width: 87%;" class="hoverable">
+                    <i style="margin-left: 10px" ></i>
+                    <span>Demo form input</span>
+                </div>
+            </li>
+
+        </ul>
+</div>
+
+    </template>
+</dom-module>
+
+<!-- Registers custom element -->
+<script>
+    class DemoDialog extends Polymer.GestureEventListeners
+
+    (MyMixin(Polymer.Element)) {
+        constructor()
+        {
+            super();
+            var timeClick = false;
+        }
+
+        static
+        get is()
+        {
+            return 'demo-dialog';
+        }
+        static
+        get properties()
+        {
+            return {
+
+            };
+        }
+
+        okClickAction()
+        {
+// process click ok
+            console.log("you click ok");
+        }
+        showMessageClickCancel()
+        {
+//            process click cancel
+            console.log("you click Cancel");
+
+        }
+        clickConfirmDemo()
+        {
+            this.$.demoCommonConfirm.open();
+        }
+        clickNotificationDemo()
+        {
+            this.$.demoCommonNotification.open();
+        }
+        clickDynamicDemo()
+        {
+            this.$.demoFormDialog.open();
+        }
+        closeDynamicDemo()
+        {
+            this.$.demoFormDialog.close();
+        }
+        submitChangeForm()
+        {
+            //call to server
+            this.$.demoFormDialog.close();
+        }
+    }
+    window.customElements.define(DemoDialog.is, DemoDialog);
+
+</script>

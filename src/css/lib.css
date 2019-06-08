@@ -1,0 +1,437 @@
+@font-face {
+    font-family: Roboto;
+    /*src: url("../fonts/RobotoRegular.ttf") !* TTF file for CSS3 browsers  *!*/
+}
+
+body {
+    font-size: 16px;
+    font-family: "Nanum Gothic", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+button,
+th,
+td,
+li,
+input,
+div {
+    font-family: "Nanum Gothic", sans-serif !important;
+}
+
+img {
+    width: 100%;
+}
+
+
+.bg-transparent {
+    background: transparent;
+}
+
+.pt-10 { padding-top: 10px; }
+.pt-20 { padding-top: 20px; }
+.pt-30 { padding-top: 30px; }
+.pt-40 { padding-top: 40px; }
+.pt-50 { padding-top: 50px; }
+.pt-60 { padding-top: 60px; }
+.pt-70 { padding-top: 70px; }
+.pt-80 { padding-top: 80px; }
+.pt-90 { padding-top: 90px; }
+.pt-100 { padding-top: 100px; }
+
+.pb-10 { padding-bottom: 10px; }
+.pb-20 { padding-bottom: 20px; }
+.pb-30 { padding-bottom: 30px; }
+.pb-40 { padding-bottom: 40px; }
+.pb-50 { padding-bottom: 50px; }
+.pb-60 { padding-bottom: 60px; }
+.pb-70 { padding-bottom: 70px; }
+.pb-80 { padding-bottom: 80px; }
+.pb-90 { padding-bottom: 90px; }
+.pb-100 { padding-bottom: 100px; }
+
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+.mt-50 { margin-top: 50px; }
+.mt-60 { margin-top: 60px; }
+.mt-70 { margin-top: 70px; }
+.mt-80 { margin-top: 80px; }
+.mt-90 { margin-top: 90px; }
+.mt-100 { margin-top: 100px; }
+
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-30 { margin-bottom: 30px; }
+.mb-40 { margin-bottom: 40px; }
+.mb-50 { margin-bottom: 50px; }
+.mb-60 { margin-bottom: 60px; }
+.mb-70 { margin-bottom: 70px; }
+.mb-80 { margin-bottom: 80px; }
+.mb-90 { margin-bottom: 90px; }
+.mb-100 { margin-bottom: 100px; }
+
+
+.ui.active.button {
+    /*border: 1px solid rgba(0, 0, 0, 0) !important;*/
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.heading-2 {
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: 900;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: 1.19;
+    letter-spacing: normal;
+}
+
+.pushable.segment{
+    margin: 0 !important;
+}
+
+/*table responsive*/
+#front-content .front-table-responsive table  {
+    width: 100%;
+}
+#front-content .front-table-responsive table thead {
+}
+#front-content .front-table-responsive table thead th {
+    border-bottom: 0px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+#front-content .front-table-responsive table td,
+#front-content .front-table-responsive table th {
+    border-left: 0px;
+    height: 35px;
+    text-align: center;
+}
+
+#front-content .front-table-responsive table td img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.front-table-box {
+    background-color: #faf9f8;
+}
+
+.front-table-title {
+    border-bottom: 1px solid rgba(34,36,38,.1);
+    padding: 40px 0px 70px;
+    background-color: #fff;
+}
+.front-table-responsive {
+    background: #fff;
+}
+.front-table-responsive .spacer {
+    height: 10px;
+}
+.front-table-responsive  tbody tr {
+    border-bottom: 0px !important;
+}
+.front-table-responsive  tbody tr:not(.spacer) {
+    box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.16);
+}
+
+.front-table-responsive thead {
+    height: 35px;
+}
+
+table .circle.blue.icon {
+    color: #0574a5;
+}
+table .circle.blue.icon {
+    color: #f8c126;
+}
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+    #front-content .front-table-responsive table,
+    #front-content .front-table-responsive thead,
+    #front-content .front-table-responsive tbody,
+    #front-content .front-table-responsive th,
+    #front-content .front-table-responsive td,
+    #front-content .front-table-responsive tr {
+        display: block;
+    }
+
+    #front-content .front-table-responsive table thead th {
+        padding-bottom: 0px;
+    }
+
+    #front-content .front-table-responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #front-content .front-table-responsive table td,
+    #front-content .front-table-responsive table th {
+        text-align: left;
+    }
+
+    /*#front-content .front-table-responsive tr { border: 1px solid #ccc; }*/
+
+    #front-content .front-table-responsive td:first-child {
+        /*background: #fff;*/
+        /*color: #09131f;*/
+    }
+    #front-content .front-table-responsive td {
+        /* Behave  like a "row" */
+        border-bottom: 0px !important;
+        border-left: 0px !important;
+        border-right : 0px !important;
+        /*border-bottom: 1px solid #eee;*/
+        position: relative;
+        padding-left: 50% !important;
+    }
+
+    #front-content .front-table-responsive td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    #front-content .front-table-responsive .spacer {
+        display: none !important;
+    }
+
+
+}
+/*table responsive*/
+
+.par-bg {
+    display: inline-block;
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    color: #fff;
+    position: relative;
+    z-index: 99;
+    padding: 5px 20px;
+}
+
+.par-bg:before {
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+    background: #ff9500;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.parallelogram-input {
+    display:inline-block;
+    padding: 0 3px 0 3px;
+    background: #fff;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    width: 100%;
+}
+
+.parallelogram-input input,
+.parallelogram-input button {
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+    -webkit-transform: skew(20deg) !important;
+    -moz-transform: skew(20deg) !important;
+    -o-transform: skew(20deg) !important;
+}
+
+.parallelogram-text {
+    display:inline-block;
+    padding: 0 3px 0 3px;
+    background: #FF9500;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    width: 100%;
+    position: relative;
+}
+
+.parallelogram-text h3,
+.parallelogram-text p {
+    outline: none !important;
+    border: none !important;
+    background: transparent !important;
+    -webkit-transform: skew(20deg) !important;
+    -moz-transform: skew(20deg) !important;
+    -o-transform: skew(20deg) !important;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.parallelogram-text.with-border:before {
+    position: absolute;
+    content: '';
+    bottom: 0px;
+    left: -10px;
+    top: 10px;
+    border-left: 5px solid #FF9500;
+}
+
+.parallelogram-text.with-border:after {
+    position: absolute;
+    content: '';
+    bottom: 10px;
+    right: -10px;
+    top: 0px;
+    border-left: 5px solid #FF9500;
+}
+
+.bg-orange {
+    background: #ff9500 !important;
+}
+.bg-default {
+    background: #F0F0F0 !important;
+}
+.bg-green {
+    background: #469828 !important;
+}
+
+.bg-blue {
+    background: #0093FF !important;
+}
+
+.full-width {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ui.breadcrumb .section {
+    color: #000;
+}
+
+.ui.breadcrumb .section:hover {
+    text-decoration: underline;
+    color: #000;
+}
+.ui.breadcrumb .section.active {
+    color: #707070;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.front-tab {
+    text-align: center;
+    border-bottom: 1px solid #FF9500;
+    margin-bottom: 20px;
+}
+.front-tab .tab-item {
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-transform: uppercase;
+}
+
+.front-tab .parallelogram-text {
+    background: #AAB0BA;
+}
+
+.front-tab .active .parallelogram-text {
+    background: #FF9500;
+}
+
+.front-tab .tab-item h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.custom-select {
+    position: relative;
+    font-family: Arial;
+}
+
+.custom-select select {
+    display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+    background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}

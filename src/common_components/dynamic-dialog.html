@@ -1,0 +1,182 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../my-mixin.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="dynamic-dialog" >
+    <link rel="import" type="css" href="../css/style.css">
+    <link rel="import" type="css" href="../css/materialize.css">
+    <template>
+        <style>
+            :host{
+                top: 15%;
+                border-radius: 3px;
+                min-width: 300px;
+            }
+            #formDialog {
+                top: inherit;
+                border-radius: inherit;
+                min-width: inherit;
+                width: inherit;
+            }
+
+            .confirm-wrapper {
+                border-bottom: 1px solid rgba(27, 28, 33, 0.1);
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 10px;
+                border-radius: 3px;
+                margin-top: 0px;
+                background-color: #f4f4f4;
+                padding-top: 13px;
+            }
+
+            .header-custom {
+                width: 40%;
+                display: inline-block;
+                text-transform: none;
+                font-size: 12pt;
+                font-weight: 500;
+            }
+
+            .close-img {
+                height: 15px;
+            }
+
+            .body {
+                margin-top: 13px;
+            }
+
+            .confirm-message {
+                font-size: 12pt;
+                font-weight: normal;
+            }
+
+            .modal-footer {
+                text-align: center;
+                border-top: 1px solid rgba(27, 28, 33, 0.1);
+                min-height: 32px;
+                padding: 8px 24px;
+                margin-bottom: 0px;
+            }
+
+            .cancel-button {
+                background: #f4f4f4;
+                text-align: center;
+                border-radius: 3px;
+                min-width: 75px;
+            }
+
+            .cancel-label {
+                color: black;
+                padding: 5px 10px;
+                font-size: 12pt;
+            }
+
+            .ok-button {
+                background: #3278ef;
+                text-align: center;
+                border-radius: 3px;
+                min-width: 75px;
+            }
+
+            .ok-label {
+                color: white;
+                padding: 5px 10px;
+                font-size: 12pt;
+            }
+        </style>
+        <paper-dialog id="formDialog" formDialog on-iron-overlay-closed="close" with-backdrop>
+            <div class="confirm-wrapper">
+                <div class="header-custom header">
+                    [[headerText]]
+                </div>
+                <div>
+                    <a class="waves-effect waves-light" on-tap="close">
+                        <img class="close-img" src="images/x-close.png"/></a>
+                </div>
+            </div>
+            <div class="body">
+                <slot></slot>
+            </div>
+
+            <div class="modal-footer">
+                <a class="waves-effect waves-light btn-submit left btn-cancel btn-popup-right cancel-button"
+                   on-tap="cancelClick">
+                    <div style="display: inline-flex;">
+                        <div class="cancel-label">
+                            [[cancelLabel]]
+                        </div>
+                    </div>
+                </a>
+                <a class="waves-effect waves-light btn-submit right btn-cancel btn-popup-right ok-button"
+                   on-tap="okClick">
+                    <div style="display: inline-flex;">
+                        <div class="ok-label">
+                            [[okLabel]]
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </paper-dialog>
+    </template>
+    <script>
+        {
+            /**
+             * A pure Polymer Web Component for numeric fields.
+             */
+            class DynamicDialog extends Polymer.GestureEventListeners
+            (MyMixin(Polymer.Element))
+            {
+                static
+                get
+                is()
+                {
+                    return 'dynamic-dialog';
+                }
+
+                static
+                get
+                properties()
+                {
+                    return {
+                        headerText: {
+                            type: String,
+                            value: 'Confirmation'
+                        },
+                        cancelLabel: {
+                            type: String,
+                            value: 'Cancel'
+                        },
+                        okLabel: {
+                            type: String,
+                            value: 'OK'
+                        }
+
+                    };
+                }
+                open()
+                {
+                    this.$.formDialog.open();
+                }
+                close()
+                {
+                    this.$.formDialog.close();
+                }
+
+                cancelClick()
+                {
+                    this.dispatchEvent(new CustomEvent('cancel-click'));
+                    this.$.formDialog.close();
+                }
+                okClick()
+                {
+                    console.log('okClick');
+                    this.dispatchEvent(new CustomEvent('ok-click'));
+
+                }
+
+            }
+            window.customElements.define(DynamicDialog.is, DynamicDialog);
+        }
+    </script>
+</dom-module>
