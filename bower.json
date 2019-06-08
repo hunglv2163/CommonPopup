@@ -1,12 +1,12 @@
 {
-  "name": "hello-world-polymer",
+  "name": "common-dialog",
   "version": "1.0.0",
-  "description": "Web Component example using Polymer",
+  "description": "Common Dialog Component example using Polymer",
   "authors": [
-    "WebComponents.org"
+    "Duc Anh"
   ],
   "license": "MIT",
-  "main": "hello-world.html",
+  "main": "demo-dialog.html",
   "keywords": [
     "polymer",
     "web-components"
@@ -17,8 +17,6 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "hello-world-polymer": "^1.1.0",
-      "paper-dialog": "^2.1.1",
       "paper-toast": "2.1.2"
 
   }
