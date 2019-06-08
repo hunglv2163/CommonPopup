@@ -2,92 +2,13 @@
 <link rel="import" href="../my-mixin.html">
 <link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
 
-<dom-module id="notification-dialog" >
+<dom-module id="notification-dialog">
     <link rel="import" type="css" href="../css/style.css">
     <link rel="import" type="css" href="../css/materialize.css">
+    <link rel="import" type="css" href="../css/commonDialog.css">
     <template>
-        <style>
-            :host{
-                top: 15%;
-                border-radius: 3px;
-                min-width: 300px;
-            }
-            #notificationDialog {
-                top: inherit;
-                border-radius: inherit;
-                min-width: inherit;
-                width: inherit;
-            }
-
-            .confirm-wrapper {
-                border-bottom: 1px solid rgba(27, 28, 33, 0.1);
-                display: flex;
-                justify-content: space-between;
-                padding-bottom: 10px;
-                border-radius: 3px;
-                margin-top: 0px;
-                background-color: #f4f4f4;
-                padding-top: 13px;
-            }
-
-            .header-custom {
-                width: 40%;
-                display: inline-block;
-                text-transform: none;
-                font-size: 12pt;
-                font-weight: 500;
-            }
-
-            .close-img {
-                height: 15px;
-            }
-
-            .body {
-                margin-top: 13px;
-            }
-
-            .confirm-message {
-                font-size: 12pt;
-                font-weight: normal;
-            }
-
-            .modal-footer {
-                text-align: center;
-                border-top: 1px solid rgba(27, 28, 33, 0.1);
-                min-height: 32px;
-                padding: 8px 24px;
-                margin-bottom: 0px;
-            }
-
-            .cancel-button {
-                background: #f4f4f4;
-                text-align: center;
-                border-radius: 3px;
-                min-width: 75px;
-            }
-
-            .cancel-label {
-                color: black;
-                padding: 5px 10px;
-                font-size: 12pt;
-            }
-
-            .ok-button {
-                background: #3278ef;
-                text-align: center;
-                border-radius: 3px;
-                min-width: 75px;
-            }
-
-            .ok-label {
-                color: white;
-                padding: 5px 10px;
-                font-size: 12pt;
-            }
-
-        </style>
-
-        <paper-dialog id="notificationDialog" notificationDialog on-iron-overlay-closed="close" with-backdrop>
+        <paper-dialog id="notificationDialog" class="paperForCommon" notificationDialog on-iron-overlay-closed="close"
+                      with-backdrop>
             <div class="confirm-wrapper">
                 <div class="header-custom header">
                     [[headerText]]
@@ -107,7 +28,6 @@
         </paper-dialog>
 
 
-
     </template>
     <script>
         {
@@ -115,15 +35,18 @@
              * A pure Polymer Web Component for numeric fields.
              */
             class NotificationDialog extends Polymer.GestureEventListeners
-            (MyMixin(Polymer.Element)) {
+            (MyMixin(Polymer.Element))
+            {
                 static
-                get is()
+                get
+                is()
                 {
                     return 'notification-dialog';
                 }
 
                 static
-                get properties()
+                get
+                properties()
                 {
                     return {
                         headerText: {

@@ -15,7 +15,10 @@
         top: 128px;
         height: calc(100% + -128px) !important;
     }
-
+    .close-img {
+        height: 20px;
+        margin-right: 8px;
+    }
 </style>
         <confirm-dialog id="demoCommonConfirm"
                         on-ok-click="okClickAction"
@@ -34,6 +37,8 @@
         <dynamic-dialog id="demoFormDialog"
                         header-text="Input dialog"
                         on-ok-click="submitChangeForm">
+
+            <img slot="titleIcon" class="close-img" src="images/x-close.png"/>
             <div class="ma-form">
                 <input id="sharePincode" name="pinCode" style="background: #ffffff;"
                        class="validate" placeholder="Enter code" >
