@@ -19,8 +19,8 @@
         height: 20px;
         margin-right: 8px;
     }
-    dynamic-dialog{
-        width: 50%;
+    dynamic-dialog#demoFormDialog{
+        width: 40%;
     }
 </style>
         <confirm-dialog id="demoCommonConfirm"
@@ -40,11 +40,35 @@
         <dynamic-dialog id="demoFormDialog"
                         header-text="Input dialog"
                         on-ok-click="submitChangeForm">
-
-            <img slot="titleIcon" class="close-img" src="images/x-close.png"/>
-            <div class="ma-form" style="width: 500px">
+            <div class="ma-form">
                 <input id="sharePincode" name="pinCode" style="background: #ffffff;"
                        class="validate" placeholder="Enter code" >
+            </div>
+        </dynamic-dialog>
+        <dynamic-dialog id="demoTitleIconDialog" hidden-ok-button no-cancel-on-outside-click
+                        header-text="Input dialog"
+                        on-ok-click="demoTitleIconDialog.close">
+
+            <img slot="titleIcon" class="close-img" src="images/x-close.png"/>
+            <div class="ma-form" style="width: 400px">
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
+                <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
             </div>
         </dynamic-dialog>
 
@@ -69,6 +93,12 @@
                 <div style="margin: 0 auto;width: 87%;" class="hoverable">
                     <i style="margin-left: 10px" ></i>
                     <span>Demo form input</span>
+                </div>
+            </li>
+            <li on-tap="clickTitleIconDemo" style="cursor: pointer">
+                <div style="margin: 0 auto;width: 87%;" class="hoverable">
+                    <i style="margin-left: 10px" ></i>
+                    <span>Demo title icon form</span>
                 </div>
             </li>
 
@@ -133,6 +163,10 @@
         {
             //call to server
             this.$.demoFormDialog.close();
+        }
+        clickTitleIconDemo()
+        {
+            this.$.demoTitleIconDialog.open();
         }
     }
     window.customElements.define(DemoDialog.is, DemoDialog);

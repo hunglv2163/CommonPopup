@@ -1,13 +1,25 @@
 :host {
-    top: 15%;
+    top: 80px;
     border-radius: 3px;
     min-width: 300px;
 }
+
 .paper-for-common {
     top: inherit;
     border-radius: inherit;
     min-width: inherit;
     width: inherit;
+}
+
+paper-dialog {
+    max-height: calc(100% - 110px);
+    overflow-y: auto !important;
+    /*z-index: 9999 !important;*/
+}
+.paper-for-common .scroll-content {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+
 }
 .confirm-wrapper {
     border-bottom: 1px solid rgba(27, 28, 33, 0.1);
@@ -75,4 +87,16 @@
     color: white;
     padding: 5px 10px;
     font-size: 12pt;
+}
+:host([hidden-footer])  paper-dialog .modal-footer{
+    display: none;
+}
+:host([hidden-footer])  paper-dialog .body{
+    margin-bottom: 24px;
+}
+:host([hidden-cancel-button])  paper-dialog .modal-footer .cancel-button {
+    display: none;
+}
+:host([hidden-ok-button]) paper-dialog .modal-footer .ok-button {
+    display: none;
 }
