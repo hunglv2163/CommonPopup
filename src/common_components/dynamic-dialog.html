@@ -13,20 +13,18 @@ support attribute no value:
     <link rel="import" type="css" href="../css/commonDialog.css">
     <template>
         <paper-dialog id="formDialog" class="paper-for-common" formDialog on-iron-overlay-closed="close"
-                      with-backdrop >
+                      with-backdrop>
             <div class="confirm-wrapper">
-                <div class="header-custom header">
+                <div class="header-custom">
                     <div style="display: inline-block">
                         <slot name="titleIcon"></slot>
                     </div>
-                    <div class="header" style="display: inline-block">
+                    <div style="display: inline-block">
                         [[headerText]]
                     </div>
                 </div>
-                <div>
-                    <a class="waves-effect waves-light" on-tap="close">
-                        <img class="close-img" src="images/x-close.png"/></a>
-                </div>
+                <a class="waves-effect waves-light" on-tap="close">
+                    <img class="close-img" src="images/x-close.png"/></a>
             </div>
             <div class="body scroll-content">
                 <slot></slot>
@@ -52,15 +50,13 @@ support attribute no value:
             class DynamicDialog extends Polymer.GestureEventListeners
             (MyMixin(Polymer.Element)) {
                 static
-                get
-                is()
+                get is()
                 {
                     return 'dynamic-dialog';
                 }
 
                 static
-                get
-                properties()
+                get properties()
                 {
                     return {
                         headerText: {
@@ -78,16 +74,19 @@ support attribute no value:
 
                     };
                 }
+
                 ready()
                 {
                     super.ready();
                     //transfer attribute default to paper-dialog
-                    var arrAttributes=this.getAttributeNames();
-                    for (var j = 0; j < arrAttributes.length; j++){
-                        var element=arrAttributes[j];
-                        if(this.getAttribute(element)==undefined || this.getAttribute(element)==""){
-                            console.log("host transfer attribute "+element);
-                            this.$.formDialog.setAttribute("no-cancel-on-outside-click",this.getAttribute(element));
+                    var arrAttributes = this.getAttributeNames();
+                    for (var j = 0; j < arrAttributes.length; j++)
+                    {
+                        var element = arrAttributes[j];
+                        if (this.getAttribute(element) == undefined || this.getAttribute(element) == "")
+                        {
+                            console.log("host transfer attribute " + element);
+                            this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
                         }
                     }
 
@@ -96,6 +95,7 @@ support attribute no value:
 //                        this.$.formDialog.setAttribute("no-cancel-on-outside-click",this.getAttribute("header-text"));
 //                    }
                 }
+
                 open()
                 {
                     this.$.formDialog.open();
@@ -120,6 +120,7 @@ support attribute no value:
                 }
 
             }
+
             window.customElements.define(DynamicDialog.is, DynamicDialog);
         }
     </script>

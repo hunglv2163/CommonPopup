@@ -10,38 +10,29 @@
         <paper-dialog id="confirmDialog" class="paper-for-common" confirmDialog on-iron-overlay-closed="close"
                       with-backdrop>
             <div class="confirm-wrapper">
-                <div class="header-custom header">
-                    [[confirmationHeader]]
-                </div>
-                <div>
-                    <a class="waves-effect waves-light" on-tap="close">
-                        <img class="close-img" src="images/x-close.png"/>
-                    </a>
-                </div>
-            </div>
-            <div class="body">
-                <div class="cancel-content">
-                    <div class="_container text-center">
-                        <p class="confirm-message">[[confirmMessage]]</p>
+                <div class="header-custom">
+                    <div style="display: inline-block">
+                        <slot name="titleIcon"></slot>
+                    </div>
+                    <div style="display: inline-block">
+                        [[headerText]]
                     </div>
                 </div>
+                <a class="waves-effect waves-light" on-tap="close">
+                    <img class="close-img" src="images/x-close.png"/></a>
+            </div>
+            <div class="body scroll-content">
+                <p class="confirm-message">[[contentMessage]]</p>
+                <slot></slot>
             </div>
             <div class="modal-footer">
-                <a class="waves-effect waves-light btn-submit left btn-cancel btn-popup-right cancel-button"
-                   on-tap="cancelConfirmDelete">
-                    <div style="display: inline-flex;">
-                        <div class="cancel-label">
-                            [[cancelLabel]]
-                        </div>
-                    </div>
+                <a class="waves-effect left cancel-button cancel-label"
+                   on-tap="cancelClick">
+                    [[cancelLabel]]
                 </a>
-                <a class="waves-effect waves-light btn-submit right btn-cancel btn-popup-right ok-button"
-                   on-tap="acceptConfirmDelete">
-                    <div style="display: inline-flex;">
-                        <div class="ok-label">
-                            [[okLabel]]
-                        </div>
-                    </div>
+                <a class="waves-effect right ok-button ok-label"
+                   on-tap="okClick">
+                    [[okLabel]]
                 </a>
             </div>
         </paper-dialog>
@@ -67,11 +58,11 @@
                 properties()
                 {
                     return {
-                        confirmationHeader: {
+                        headerText: {
                             type: String,
                             value: 'Confirmation'
                         },
-                        confirmMessage: {
+                        contentMessage: {
                             type: String,
                             value: 'Do you want to continue?'
                         },
@@ -86,6 +77,21 @@
 
                     };
                 }
+                ready()
+                {
+                    super.ready();
+                    //transfer attribute default to paper-dialog
+                    var arrAttributes = this.getAttributeNames();
+                    for (var j = 0; j < arrAttributes.length; j++)
+                    {
+                        var element = arrAttributes[j];
+                        if (this.getAttribute(element) == undefined || this.getAttribute(element) == "")
+                        {
+                            console.log("host transfer attribute " + element);
+                            this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
+                        }
+                    }
+                }
 
                 open()
                 {
@@ -97,19 +103,17 @@
                     this.$.confirmDialog.close();
                 }
 
-                cancelConfirmDelete()
+                cancelClick()
                 {
                     this.dispatchEvent(new CustomEvent('cancel-click'));
-
                     this.$.confirmDialog.close();
                 }
 
-                acceptConfirmDelete()
+                okClick()
                 {
-                    console.log('acceptConfirmDelete');
+                    console.log('okClick');
                     this.dispatchEvent(new CustomEvent('ok-click'));
                     this.$.confirmDialog.close();
-
                 }
 
             }
