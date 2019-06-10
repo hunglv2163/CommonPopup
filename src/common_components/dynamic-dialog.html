@@ -1,0 +1,143 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../my-mixin.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+<!--
+support attribute no value:
+    hidden-footer
+    hidden-cancel-button
+    hidden-ok-button
+-->
+<dom-module id="dynamic-dialog">
+    <link rel="import" type="css" href="../css/style.css">
+    <link rel="import" type="css" href="../css/materialize.css">
+    <link rel="import" type="css" href="../css/commonDialog.css">
+    <template>
+        <paper-dialog id="formDialog" class="paper-for-common" formDialog on-iron-overlay-closed="close"
+                      with-backdrop>
+            <div id="header-id" class="confirm-wrapper">
+                <div id="header-left-id" class="header-custom">
+                    <div id="title-icon-id" style="display: inline-block">
+                        <slot name="titleIcon"></slot>
+                    </div>
+                    <div id="header-text-id" style="display: inline-block">
+                        [[headerText]]
+                    </div>
+                </div>
+                <a  id="close-btn-id" class="waves-effect waves-light" on-tap="close">
+                    <slot name="closeIcon"></slot>
+                    <img id="ic-close-id" class="close-img" src="images/x-close.png"/>
+                </a>
+            </div>
+            <div id="body-id" class="body scroll-content">
+                <slot></slot>
+            </div>
+            <div id="footer-id" class="modal-footer">
+                <a id="cancel-btn-id" class="waves-effect left cancel-button cancel-label"
+                   on-tap="cancelClick">
+                    [[cancelLabel]]
+                </a>
+                <a id="ok-btn-id" class="waves-effect right ok-button ok-label"
+                   on-tap="okClick">
+                    [[okLabel]]
+                </a>
+            </div>
+        </paper-dialog>
+    </template>
+    <script>
+        {
+            /**
+             * A pure Polymer Web Component
+             */
+            class DynamicDialog extends Polymer.GestureEventListeners
+            (MyMixin(Polymer.Element)) {
+                static
+                get is()
+                {
+                    return 'dynamic-dialog';
+                }
+
+                static
+                get properties()
+                {
+                    return {
+                        headerText: {
+                            type: String,
+                            value: 'Input dialog'
+                        },
+                        cancelLabel: {
+                            type: String,
+                            value: 'Cancel'
+                        },
+                        okLabel: {
+                            type: String,
+                            value: 'OK'
+                        }
+
+                    };
+                }
+
+                ready()
+                {
+                    super.ready();
+                    //transfer attribute default to paper-dialog
+                    var arrAttributes = this.getAttributeNames();
+                    for (var j = 0; j < arrAttributes.length; j++)
+                    {
+                        var element = arrAttributes[j];
+                        if (this.getAttribute(element) == undefined || this.getAttribute(element) == "")
+                        {
+                            this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
+                        }else
+                        //customize element
+                        //customize class
+                        if(element.endsWith("-class")){
+                            var elementId="#"+element.replace(new RegExp('-class$'),"-id");
+                            if(this.$.formDialog.querySelector(elementId)!=undefined)
+                                this.$.formDialog.querySelector(elementId).classList.add(this.getAttribute(element));
+                        }else if(element.endsWith("-style")){
+                            var elementId="#"+element.replace(new RegExp('-style$'),"-id");
+                            if(this.$.formDialog.querySelector(elementId)!=undefined)
+                                this.$.formDialog.querySelector(elementId).style.cssText+=this.getAttribute(element);
+                        }
+                    }
+                    // change icon close
+                    if(this.querySelector("[slot='closeIcon']")!=undefined){
+                        this.$.formDialog.querySelector("#ic-close-id").style.display="none";
+                    }
+//                    if(this.hasAttribute("no-cancel-on-outside-click")){
+//                        console.log("host set no-cancel-on-outside-click");
+//                        this.$.formDialog.setAttribute("no-cancel-on-outside-click",this.getAttribute("header-text"));
+//                    }
+                    //set style element
+
+                }
+
+                open()
+                {
+                    this.$.formDialog.open();
+                }
+
+                close()
+                {
+                    this.$.formDialog.close();
+                }
+
+                cancelClick()
+                {
+                    this.dispatchEvent(new CustomEvent('cancel-click'));
+                    this.$.formDialog.close();
+                }
+
+                okClick()
+                {
+                    console.log('okClick');
+                    this.dispatchEvent(new CustomEvent('ok-click'));
+
+                }
+
+            }
+
+            window.customElements.define(DynamicDialog.is, DynamicDialog);
+        }
+    </script>
+</dom-module>

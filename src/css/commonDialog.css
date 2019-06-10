@@ -1,0 +1,102 @@
+:host {
+    top: 80px;
+    border-radius: 3px;
+    min-width: 300px;
+}
+
+.paper-for-common {
+    top: inherit;
+    border-radius: inherit;
+    min-width: inherit;
+    width: inherit;
+}
+
+paper-dialog {
+    max-height: calc(100% - 110px);
+    overflow-y: auto !important;
+    /*z-index: 9999 !important;*/
+}
+.paper-for-common .scroll-content {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+
+}
+.confirm-wrapper {
+    border-bottom: 1px solid rgba(27, 28, 33, 0.1);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    /*border-radius: 3px;*/
+    margin-top: 0px;
+    background-color: #f4f4f4;
+    padding-top: 13px;
+}
+
+.header-custom {
+    /*width: 40%;*/
+    /*display: inline-block;*/
+    text-transform: none;
+    font-size: 12pt;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.close-img {
+    height: 15px;
+}
+
+.body {
+    margin-top: 13px;
+}
+
+.confirm-message {
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.modal-footer {
+    text-align: center;
+    border-top: 1px solid rgba(27, 28, 33, 0.1);
+    min-height: 32px;
+    padding: 8px 24px;
+    margin-bottom: 0px;
+}
+
+.cancel-button {
+    background: #f4f4f4;
+    text-align: center;
+    border-radius: 3px;
+    min-width: 75px;
+}
+
+.cancel-label {
+    color: black;
+    padding: 5px 10px;
+    font-size: 12pt;
+}
+
+.ok-button {
+    background: #3278ef;
+    text-align: center;
+    border-radius: 3px;
+    min-width: 75px;
+}
+
+.ok-label {
+    color: white;
+    padding: 5px 10px;
+    font-size: 12pt;
+}
+:host([hidden-footer])  paper-dialog .modal-footer{
+    display: none;
+}
+:host([hidden-footer])  paper-dialog .body{
+    margin-bottom: 24px;
+}
+:host([hidden-cancel-button])  paper-dialog .modal-footer .cancel-button {
+    display: none;
+}
+:host([hidden-ok-button]) paper-dialog .modal-footer .ok-button {
+    display: none;
+}

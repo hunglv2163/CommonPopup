@@ -1,0 +1,136 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../my-mixin.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="confirm-dialog">
+    <link rel="import" type="css" href="../css/style.css">
+    <link rel="import" type="css" href="../css/materialize.css">
+    <link rel="import" type="css" href="../css/commonDialog.css">
+    <template>
+        <paper-dialog id="confirmDialog" class="paper-for-common" confirmDialog on-iron-overlay-closed="close"
+                      with-backdrop>
+            <div id="header-id" class="confirm-wrapper">
+                <div id="header-left-id" class="header-custom">
+                    <div id="title-icon-id" style="display: inline-block">
+                        <slot name="titleIcon"></slot>
+                    </div>
+                    <div id="header-text-id" style="display: inline-block">
+                        [[headerText]]
+                    </div>
+                </div>
+                <a  id="close-btn-id" class="waves-effect waves-light" on-tap="close">
+                    <slot name="closeIcon"></slot>
+                    <img id="ic-close-id" class="close-img" src="images/x-close.png"/>
+                </a>
+            </div>
+            <div id="body-id" class="body scroll-content">
+                <p class="confirm-message">[[contentMessage]]</p>
+                <slot></slot>
+            </div>
+            <div id="footer-id" class="modal-footer">
+                <a id="cancel-btn-id" class="waves-effect left cancel-button cancel-label"
+                   on-tap="cancelClick">
+                    [[cancelLabel]]
+                </a>
+                <a id="ok-btn-id" class="waves-effect right ok-button ok-label"
+                   on-tap="okClick">
+                    [[okLabel]]
+                </a>
+            </div>
+        </paper-dialog>
+
+    </template>
+    <script>
+        {
+            /**
+             * A pure Polymer Web Component for numeric fields.
+             */
+            class ConfirmDialog extends Polymer.GestureEventListeners
+            (MyMixin(Polymer.Element))
+            {
+                static
+                get
+                is()
+                {
+                    return 'confirm-dialog';
+                }
+
+                static
+                get
+                properties()
+                {
+                    return {
+                        headerText: {
+                            type: String,
+                            value: 'Confirmation'
+                        },
+                        contentMessage: {
+                            type: String,
+                            value: 'Do you want to continue?'
+                        },
+                        cancelLabel: {
+                            type: String,
+                            value: 'Cancel'
+                        },
+                        okLabel: {
+                            type: String,
+                            value: 'OK'
+                        }
+
+                    };
+                }
+                ready()
+                {
+                    super.ready();
+                    //transfer attribute default to paper-dialog
+                    var arrAttributes = this.getAttributeNames();
+                    for (var j = 0; j < arrAttributes.length; j++)
+                    {
+                        var element = arrAttributes[j];
+                        if (this.getAttribute(element) == undefined || this.getAttribute(element) == "")
+                        {
+                            this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
+                        }else
+                        //customize element
+                        //customize class
+                        if(element.endsWith("-class")){
+                            var elementId="#"+element.replace(new RegExp('-class$'),"-id");
+                            if(this.$.formDialog.querySelector(elementId)!=undefined)
+                                this.$.formDialog.querySelector(elementId).classList.add(this.getAttribute(element));
+                        }else if(element.endsWith("-style")){
+                            var elementId="#"+element.replace(new RegExp('-style$'),"-id");
+                            if(this.$.formDialog.querySelector(elementId)!=undefined)
+                                this.$.formDialog.querySelector(elementId).style.cssText+=this.getAttribute(element);
+                        }
+                    }
+                }
+
+                open()
+                {
+                    this.$.confirmDialog.open();
+                }
+
+                close()
+                {
+                    this.$.confirmDialog.close();
+                }
+
+                cancelClick()
+                {
+                    this.dispatchEvent(new CustomEvent('cancel-click'));
+                    this.$.confirmDialog.close();
+                }
+
+                okClick()
+                {
+                    console.log('okClick');
+                    this.dispatchEvent(new CustomEvent('ok-click'));
+                    this.$.confirmDialog.close();
+                }
+
+            }
+
+            window.customElements.define(ConfirmDialog.is, ConfirmDialog);
+        }
+    </script>
+</dom-module>
