@@ -36,10 +36,10 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     a. Transmit text<br>
     <table>
         <tr>
-            <td>Attributes</td>
-            <td>Description</td>
-            <td>Default value</td>
-            <td>Eg</td>
+            <td><b>Attributes</b></td>
+            <td><b>Description</b></td>
+            <td><b>Default value</b></td>
+            <td><b>Eg</td>
         </tr>
         <tr>
             <td>header-text</td>
@@ -71,9 +71,9 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     <br>
     <table>
         <tr>
-            <td>Attributes</td>
-            <td>Description</td>
-            <td>Eg</td>
+            <td><b>Attributes</b></td>
+            <td><b>Description</b></td>
+            <td><b>Eg</b></td>
         </tr>
         <tr>
             <td>on-cancel-click</td>
