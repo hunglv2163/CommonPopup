@@ -29,8 +29,8 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     + hidden-footer
     + hidden-cancel-button
     + hidden-ok-button
-- Customize properties transmit values:
-    1. Transmit text<br>
+- Customize properties transmit values:<br>
+    a. Transmit text<br>
     <table>
         <tr>
             <td>Attributes</td>
@@ -64,7 +64,7 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
         </tr>
     </table>
     <br>
-    2. Transmit function<br>
+    b. Transmit function<br>
     <br>
     <table>
         <tr>
