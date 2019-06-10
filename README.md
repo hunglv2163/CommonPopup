@@ -93,7 +93,7 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     Change **close icon** by using tag contains slot="closeIcon".
     Eg: \<img slot="closeIcon" class="close-img" src="images/ic_close_48px_white.png"/>. 
 <br>
-    3. Other customize style element, using in dynamic-dialog tag <br>
+3. Other customize style element, using in dynamic-dialog tag <br>
     <table>
         <tr>
             <td><b>Attributes</b></td>
