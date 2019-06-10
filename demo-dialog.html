@@ -15,12 +15,18 @@
         top: 128px;
         height: calc(100% + -128px) !important;
     }
-    .close-img {
+    .title-img {
         height: 20px;
         margin-right: 8px;
     }
+    .close-img {
+        height: 15px;
+    }
     dynamic-dialog#demoFormDialog{
         width: 40%;
+    }
+    .test-header-class{
+        color: #0ea432;
     }
 </style>
         <confirm-dialog id="demoCommonConfirm"
@@ -44,10 +50,12 @@
         </dynamic-dialog>
 
         <dynamic-dialog id="demoTitleIconDialog" hidden-ok-button no-cancel-on-outside-click
+                        header-style="background-color: #1E88E5;color:white; "
                         header-text="Input dialog"
                         on-ok-click="demoTitleIconDialog.close">
 
-            <img slot="titleIcon" class="close-img" src="images/icon_share.png"/>
+            <img slot="titleIcon" class="title-img" src="images/icon_share.png"/>
+            <img slot="closeIcon" class="close-img" src="images/ic_close_48px_white.png"/>
             <div class="ma-form" style="width: 400px">
                 <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >
                 <input  name="code" style="background: #ffffff;" class="validate" placeholder="Enter code" >

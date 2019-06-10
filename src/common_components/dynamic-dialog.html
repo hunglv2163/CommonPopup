@@ -14,27 +14,29 @@ support attribute no value:
     <template>
         <paper-dialog id="formDialog" class="paper-for-common" formDialog on-iron-overlay-closed="close"
                       with-backdrop>
-            <div class="confirm-wrapper">
-                <div class="header-custom">
-                    <div style="display: inline-block">
+            <div id="header-id" class="confirm-wrapper">
+                <div id="header-left-id" class="header-custom">
+                    <div id="title-icon-id" style="display: inline-block">
                         <slot name="titleIcon"></slot>
                     </div>
-                    <div style="display: inline-block">
+                    <div id="header-text-id" style="display: inline-block">
                         [[headerText]]
                     </div>
                 </div>
-                <a class="waves-effect waves-light" on-tap="close">
-                    <img class="close-img" src="images/x-close.png"/></a>
+                <a  id="close-btn-id" class="waves-effect waves-light" on-tap="close">
+                    <slot name="closeIcon"></slot>
+                    <img id="ic-close-id" class="close-img" src="images/x-close.png"/>
+                </a>
             </div>
-            <div class="body scroll-content">
+            <div id="body-id" class="body scroll-content">
                 <slot></slot>
             </div>
-            <div class="modal-footer">
-                <a class="waves-effect left cancel-button cancel-label"
+            <div id="footer-id" class="modal-footer">
+                <a id="cancel-btn-id" class="waves-effect left cancel-button cancel-label"
                    on-tap="cancelClick">
                     [[cancelLabel]]
                 </a>
-                <a class="waves-effect right ok-button ok-label"
+                <a id="ok-btn-id" class="waves-effect right ok-button ok-label"
                    on-tap="okClick">
                     [[okLabel]]
                 </a>
@@ -60,7 +62,7 @@ support attribute no value:
                     return {
                         headerText: {
                             type: String,
-                            value: 'Confirmation'
+                            value: 'Input dialog'
                         },
                         cancelLabel: {
                             type: String,
@@ -86,13 +88,29 @@ support attribute no value:
                         {
                             console.log("host transfer attribute " + element);
                             this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
+                        }else
+                        //customize element
+                        //customize class
+                        if(element.endsWith("-class")){
+                            var elementId="#"+element.replace(new RegExp('-class$'),"-id");
+                            if(this.$.formDialog.querySelector(elementId)!=undefined)
+                                this.$.formDialog.querySelector(elementId).classList.add(this.getAttribute(element));
+                        }else if(element.endsWith("-style")){
+                            var elementId="#"+element.replace(new RegExp('-style$'),"-id");
+                            if(this.$.formDialog.querySelector(elementId)!=undefined)
+                                this.$.formDialog.querySelector(elementId).style.cssText+=this.getAttribute(element);
                         }
                     }
-
+                    // change icon close
+                    if(this.querySelector("[slot='closeIcon']")!=undefined){
+                        this.$.formDialog.querySelector("#ic-close-id").style.display="none";
+                    }
 //                    if(this.hasAttribute("no-cancel-on-outside-click")){
 //                        console.log("host set no-cancel-on-outside-click");
 //                        this.$.formDialog.setAttribute("no-cancel-on-outside-click",this.getAttribute("header-text"));
 //                    }
+                    //set style element
+
                 }
 
                 open()
