@@ -86,7 +86,6 @@ support attribute no value:
                         var element = arrAttributes[j];
                         if (this.getAttribute(element) == undefined || this.getAttribute(element) == "")
                         {
-                            console.log("host transfer attribute " + element);
                             this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
                         }else
                         //customize element
