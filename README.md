@@ -90,56 +90,56 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     Change **close icon** by using tag contains slot="closeIcon".
     Eg: \<img slot="closeIcon" class="close-img" src="images/ic_close_48px_white.png"/>. 
 <br>
-3. Other customize style element, using in dynamic-dialog tag <br>
-<table>
-    <tr>
-        <td><b>Attributes</b></td>
-        <td><b>Description</b></td>
-        <td><b>Eg</b></td>
-    </tr>
-    <tr>
-        <td>header-style</td>
-        <td>style for element</td>
-        <td> header-style="background-color: #1E88E5; "</td>
-    </tr>
-    <tr>
-        <td>   header-left-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>        title-icon-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>        header-text-style</td>
-        <td></td>
-        <td>header-text-style="color:white;"</td>
-    </tr>
-    <tr>
-        <td>   close-btn-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>body-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>footer-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>   cancel-btn-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>   ok-btn-style</td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
+    3. Other customize style element, using in dynamic-dialog tag <br>
+    <table>
+        <tr>
+            <td><b>Attributes</b></td>
+            <td><b>Description</b></td>
+            <td><b>Eg</b></td>
+        </tr>
+        <tr>
+            <td>header-style</td>
+            <td>style for element</td>
+            <td> header-style="background-color: #1E88E5; "</td>
+        </tr>
+        <tr>
+            <td>   header-left-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>        title-icon-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>        header-text-style</td>
+            <td></td>
+            <td>header-text-style="color:white;"</td>
+        </tr>
+        <tr>
+            <td>   close-btn-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>body-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>footer-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>   cancel-btn-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>   ok-btn-style</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
