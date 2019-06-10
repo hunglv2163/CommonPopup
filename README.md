@@ -103,22 +103,22 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
             <td> header-style="background-color: #1E88E5; "</td>
         </tr>
         <tr>
-            <td>   header-left-style</td>
+            <td>&nbsp;&nbsp;&nbsp;header-left-style</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td>        title-icon-style</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title-icon-style</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td>        header-text-style</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;header-text-style</td>
             <td></td>
             <td>header-text-style="color:white;"</td>
         </tr>
         <tr>
-            <td>   close-btn-style</td>
+            <td>&nbsp;&nbsp;&nbsp;close-btn-style</td>
             <td></td>
             <td></td>
         </tr>
@@ -133,12 +133,12 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
             <td></td>
         </tr>
         <tr>
-            <td>   cancel-btn-style</td>
+            <td>&nbsp;&nbsp;&nbsp;cancel-btn-style</td>
             <td></td>
             <td></td>
         </tr>
         <tr>
-            <td>   ok-btn-style</td>
+            <td>&nbsp;&nbsp;&nbsp;ok-btn-style</td>
             <td></td>
             <td></td>
         </tr>
