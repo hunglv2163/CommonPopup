@@ -31,19 +31,58 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     + hidden-ok-button
 - Customize properties transmit values:
     1. Transmit text<br>
-    | Attributes       | Description                                   | Default value            | Eg                                                     |
-    |------------------|-----------------------------------------------|--------------------------|--------------------------------------------------------|
-    | header\-text     |                                               | Input dialog             | header\-text="Change password dialog"                  |
-    | cancel\-label    |                                               | Cancel                   | cancel\-label="Cancel"                                 |
-    | ok\-label        |                                               | OK                       | ok\-label ="OK"                                        |
-    | content\-message | Use for confirm\-dialog, notification\-dialog | Do you want to continue? | content\-message="Do you want to delete this item?   " |
+    <table>
+        <tr>
+            <td>Attributes</td>
+            <td>Description</td>
+            <td>Default value</td>
+            <td>Eg</td>
+        </tr>
+        <tr>
+            <td>header-text</td>
+            <td></td>
+            <td>Input dialog</td>
+            <td>header-text="Change password dialog"</td>
+        </tr>
+        <tr>
+            <td>cancel-label</td>
+            <td></td>
+            <td>Cancel</td>
+            <td>cancel-label="Cancel"</td>
+        </tr>
+        <tr>
+            <td>ok-label</td>
+            <td></td>
+            <td>OK</td>
+            <td>ok-label ="OK"</td>
+        </tr>
+        <tr>
+            <td>content-message</td>
+            <td>Use for confirm-dialog, notification-dialog</td>
+            <td>Do you want to continue?</td>
+            <td>content-message="Do you want to delete this item?   "</td>
+        </tr>
+    </table>
     <br>
     2. Transmit function<br>
-    | Attributes        | Description                                      | Eg                |
-    |-------------------|--------------------------------------------------|-------------------|
-    | on\-cancel\-click | function implementation when click Cancel button | on\-cancel\-click |
-    | on\-ok\-click     | function implementation when click OK button     | on\-ok\-click     |
     <br>
+    <table>
+        <tr>
+            <td>Attributes</td>
+            <td>Description</td>
+            <td>Eg</td>
+        </tr>
+        <tr>
+            <td>on-cancel-click</td>
+            <td>function implementation when click Cancel button</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>on-ok-click</td>
+            <td>function implementation when click OK button</td>
+            <td>on-ok-click="submitChangeForm"</td>
+        </tr>
+    </table>
 2. Content inside <dynamic-dialog>"This content" </dynamic-dialog>.<br>
     Default is the html content of the dialog body.<br>
     You can add **title icon** by using tag contains slot="titleIcon".
@@ -52,16 +91,55 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
     Eg: \<img slot="closeIcon" class="close-img" src="images/ic_close_48px_white.png"/>. 
 <br>
 3. Other customize style element, using in dynamic-dialog tag <br>
-    | Attributes                  | Description       | Eg                                             |
-    |-----------------------------|-------------------|------------------------------------------------|
-    | header\-style               | style for element |  header\-style="background\-color: \#1E88E5; " |
-    |    header\-left\-style      |                   |                                                |
-    |         title\-icon\-style  |                   |                                                |
-    |         header\-text\-style |                   | header\-text\-style="color:white;"             |
-    |    close\-btn\-style        |                   |                                                |
-    | body\-style                 |                   |                                                |
-    | footer\-style               |                   |                                                |
-    |    cancel\-btn\-style       |                   |                                                |
-    |    ok\-btn\-style           |                   |                                                |
-    |                             |                   |                                                |
-
+<table>
+    <tr>
+        <td><b>Attributes</b></td>
+        <td><b>Description</b></td>
+        <td><b>Eg</b></td>
+    </tr>
+    <tr>
+        <td>header-style</td>
+        <td>style for element</td>
+        <td> header-style="background-color: #1E88E5; "</td>
+    </tr>
+    <tr>
+        <td>   header-left-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>        title-icon-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>        header-text-style</td>
+        <td></td>
+        <td>header-text-style="color:white;"</td>
+    </tr>
+    <tr>
+        <td>   close-btn-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>body-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>footer-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>   cancel-btn-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>   ok-btn-style</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
