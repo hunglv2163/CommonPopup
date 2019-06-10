@@ -1,7 +1,7 @@
 
-##CommonPopup
+# CommonPopup
 
-### Development
+## Development
 
 In order to run it locally you'll need to fetch some dependencies and a basic server setup.
 
@@ -22,7 +22,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
     ```sh
     $ polyserve
     ```
-### Guide 
+## Guide
 Instructions for using dynamic-dialog<br>
 1. Using in dynamic-dialog tag <br>
 Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
