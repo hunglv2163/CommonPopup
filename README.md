@@ -39,7 +39,7 @@ Eg: <dynamic-dialog header-text="Input dialog" hidden-footer ....
             <td><b>Attributes</b></td>
             <td><b>Description</b></td>
             <td><b>Default value</b></td>
-            <td><b>Eg</td>
+            <td><b>Eg</b></td>
         </tr>
         <tr>
             <td>header-text</td>
