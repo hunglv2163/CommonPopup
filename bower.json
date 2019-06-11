@@ -1,24 +1,24 @@
 {
-  "name": "common-dialog",
-  "version": "1.0.0",
-  "description": "Common Dialog Component example using Polymer",
-  "authors": [
-    "Duc Anh"
-  ],
-  "license": "MIT",
-  "main": "demo-dialog.html",
-  "keywords": [
-    "polymer",
-    "web-components"
-  ],
-  "ignore": [
-    "**/.*",
-    "bower_components"
-  ],
-  "dependencies": {
-    "polymer": "Polymer/polymer#^1.0.0",
-      "paper-dialog": "^2.1.1",
-      "paper-toast": "2.1.2"
-
-  }
+    "name": "common-dialog",
+    "version": "1.0.0",
+    "description": "Common Dialog Component example using Polymer",
+    "authors": [
+        "Duc Anh"
+    ],
+    "license": "MIT",
+    "main": "demo-dialog.html",
+    "keywords": [
+        "polymer",
+        "web-components"
+    ],
+    "ignore": [
+        "**/.*",
+        "bower_components"
+    ],
+    "dependencies": {
+        "polymer": "Polymer/polymer#^1.0.0",
+        "polymer": "Polymer/polymer#^2.7.1",
+        "paper-dialog": "^2.1.1",
+        "paper-toast": "2.1.2"
+    }
 }
