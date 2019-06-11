@@ -17,7 +17,7 @@ In order to run it locally you'll need to fetch some dependencies and a basic se
     $ bower install
     ```
 
-3. Start development server and open `http://localhost:8081/components/hello-world-polymer/`.
+3. Start development server and open `http://localhost:8081`.
 
     ```sh
     $ polyserve
