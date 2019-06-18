@@ -89,18 +89,18 @@
                         var element = arrAttributes[j];
                         if (this.getAttribute(element) == undefined || this.getAttribute(element) == "")
                         {
-                            this.$.formDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
+                            this.$.confirmDialog.setAttribute("no-cancel-on-outside-click", this.getAttribute(element));
                         }else
                         //customize element
                         //customize class
                         if(element.endsWith("-class")){
                             var elementId="#"+element.replace(new RegExp('-class$'),"-id");
-                            if(this.$.formDialog.querySelector(elementId)!=undefined)
-                                this.$.formDialog.querySelector(elementId).classList.add(this.getAttribute(element));
+                            if(this.$.confirmDialog.querySelector(elementId)!=undefined)
+                                this.$.confirmDialog.querySelector(elementId).classList.add(this.getAttribute(element));
                         }else if(element.endsWith("-style")){
                             var elementId="#"+element.replace(new RegExp('-style$'),"-id");
-                            if(this.$.formDialog.querySelector(elementId)!=undefined)
-                                this.$.formDialog.querySelector(elementId).style.cssText+=this.getAttribute(element);
+                            if(this.$.confirmDialog.querySelector(elementId)!=undefined)
+                                this.$.confirmDialog.querySelector(elementId).style.cssText+=this.getAttribute(element);
                         }
                     }
                 }
