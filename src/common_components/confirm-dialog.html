@@ -23,8 +23,8 @@
                     <img id="ic-close-id" class="close-img" src="images/x-close.png"/>
                 </a>
             </div>
-            <div id="body-id" class="body scroll-content">
-                <p class="confirm-message">[[contentMessage]]</p>
+            <div id="body-id" class="body scroll-content confirm-message">
+                <p id="content-default-id">[[contentMessage]]</p>
                 <slot></slot>
             </div>
             <div id="footer-id" class="modal-footer">
@@ -82,6 +82,9 @@
                 ready()
                 {
                     super.ready();
+                    if(this.contentMessage==null || this.contentMessage=="")
+                        this.$.confirmDialog.querySelector("#content-default-id").style.display="none";
+
                     //transfer attribute default to paper-dialog
                     var arrAttributes = this.getAttributeNames();
                     for (var j = 0; j < arrAttributes.length; j++)
